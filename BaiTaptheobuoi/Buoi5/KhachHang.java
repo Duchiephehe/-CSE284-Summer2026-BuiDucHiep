@@ -2,15 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Customer implements IThongTin {
+public class KhachHang implements INhapXuat {
     private String maKhachHang;
     private String tenKhachHang;
     private String soDienThoai;
-    
-    // Quan hệ 1 - n: Một khách hàng có thể có nhiều đơn hàng
-    private List<Order> danhSachDonHang;
+    private List<DonHang> danhSachDonHang;
 
-    public Customer() {
+    public KhachHang() {
         this.danhSachDonHang = new ArrayList<>();
     }
 
@@ -38,15 +36,15 @@ public class Customer implements IThongTin {
         this.soDienThoai = soDienThoai;
     }
 
-    public List<Order> getDanhSachDonHang() {
+    public List<DonHang> getDanhSachDonHang() {
         return danhSachDonHang;
     }
 
-    public void setDanhSachDonHang(List<Order> danhSachDonHang) {
+    public void setDanhSachDonHang(List<DonHang> danhSachDonHang) {
         this.danhSachDonHang = danhSachDonHang;
     }
 
-    public void themDonHang(Order order) {
+    public void themDonHang(DonHang order) {
         this.danhSachDonHang.add(order);
     }
 

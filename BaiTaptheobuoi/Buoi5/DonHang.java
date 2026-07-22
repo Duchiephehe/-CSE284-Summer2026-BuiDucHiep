@@ -2,15 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Order implements IThongTin {
+public class DonHang implements INhapXuat {
     private String maDonHang;
     private String ngayTao;
     private Double tongTien;
-    
-    // Quan hệ 1 - n: Một đơn hàng có thể có nhiều loại hoa quả
-    private List<Fruit> danhSachHoaQua;
+    private List<HoaQua> danhSachHoaQua;
 
-    public Order() {
+    public DonHang() {
         this.danhSachHoaQua = new ArrayList<>();
     }
 
@@ -38,15 +36,15 @@ public class Order implements IThongTin {
         this.tongTien = tongTien;
     }
 
-    public List<Fruit> getDanhSachHoaQua() {
+    public List<HoaQua> getDanhSachHoaQua() {
         return danhSachHoaQua;
     }
 
-    public void setDanhSachHoaQua(List<Fruit> danhSachHoaQua) {
+    public void setDanhSachHoaQua(List<HoaQua> danhSachHoaQua) {
         this.danhSachHoaQua = danhSachHoaQua;
     }
 
-    public void themHoaQua(Fruit fruit) {
+    public void themHoaQua(HoaQua fruit) {
         this.danhSachHoaQua.add(fruit);
     }
 
@@ -55,10 +53,10 @@ public class Order implements IThongTin {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập mã đơn hàng: ");
         this.maDonHang = scanner.nextLine();
-        
+
         System.out.print("Nhập ngày tạo (dd/mm/yyyy): ");
         this.ngayTao = scanner.nextLine();
-        
+
         System.out.print("Nhập tổng tiền: ");
         this.tongTien = scanner.nextDouble();
     }

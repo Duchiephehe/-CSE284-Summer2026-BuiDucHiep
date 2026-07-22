@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Fruit implements IThongTin {
+public class HoaQua implements INhapXuat {
     private String maHoaQua;
     private String tenHoaQua;
     private Double giaBan;

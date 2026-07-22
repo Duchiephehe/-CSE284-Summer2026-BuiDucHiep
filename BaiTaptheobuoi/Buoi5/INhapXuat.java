@@ -1,4 +1,4 @@
-public interface IThongTin {
+public interface INhapXuat {
     void nhapThongTin();
     void xuatThongTin();
 }
